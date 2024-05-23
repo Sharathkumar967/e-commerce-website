@@ -1,0 +1,44 @@
+.item {
+  border-radius: 5px;
+  padding: 16px;
+  margin: 10px;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.item:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+
+.item p {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.item-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.item-price-new {
+  font-size: 20px;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.item-price-old {
+  font-size: 16px;
+  color: #999;
+  text-decoration: line-through;
+}
