@@ -1,8 +1,9 @@
 import React from "react";
-import Hero from "../components/navbar/hero/Hero";
-import Popular from "../components/navbar/popular/Popular";
-import Offers from "../components/navbar/offers/Offers";
-import NewCollections from "../components/navbar/newCollections/NewCollections";
+import Hero from "../components/hero/Hero";
+import Popular from "../components/popular/Popular";
+import Offers from "../components/offers/Offers";
+import NewCollections from "../components/newCollections/NewCollections";
+import NewsLetter from "../components/newsLetter/NewsLetter";
 
 const Shop = () => {
   return (
@@ -11,6 +12,7 @@ const Shop = () => {
       <Popular />
       <Offers />
       <NewCollections />
+      <NewsLetter />
     </div>
   );
 };
