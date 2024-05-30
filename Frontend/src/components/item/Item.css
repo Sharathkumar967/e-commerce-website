@@ -1,44 +1,52 @@
 .item {
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 16px;
-  margin: 10px;
-  max-width: 300px;
-  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  max-width: 290px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .item:hover {
-  transform: scale(1.05);
-  transition: 0.6s;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .item img {
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
-  margin-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.item img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .item p {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0 0 8px 0;
+  font-size: 1.2em;
+  margin: 10px 0;
   color: #333;
 }
 
 .item-prices {
   display: flex;
+  justify-content: center;
   align-items: baseline;
-  gap: 8px;
+  gap: 10px;
 }
 
 .item-price-new {
-  font-size: 20px;
-  font-weight: bold;
-  color: #27ae60;
+  font-size: 1.5em;
+  color: #e74c3c;
 }
 
 .item-price-old {
-  font-size: 16px;
+  font-size: 1.2em;
   color: #999;
   text-decoration: line-through;
 }

@@ -1,65 +1,69 @@
 .newsLetter {
-  /* width: 65%; */
-  /* height: 40vh; */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  padding: 0px 14px;
-  margin-bottom: 150px;
-  background: linear-gradient(180deg #fde1ff 0%, #e1ffea22 60%);
-  background-color: red;
-  gap: 30px; */
-  /* height: 35vh; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
-  width: 83%;
-  padding: 40px;
-  margin-bottom: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
   background: linear-gradient(60deg, #fde1ff 100%, #e1ffea22 60%);
-  gap: 30px;
+  padding: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .newsLetter h1 {
-  color: #454545;
-  font-size: 55px;
-  font-weight: 600;
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .newsLetter p {
-  color: #454545;
-  font-size: 20px;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #777;
 }
 
 .newsLetter div {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  background: white;
-  width: 730px;
-  height: 70px;
-  border-radius: 80px;
-  border: 1px solid #e3e3e3;
+  gap: 10px;
+  flex-wrap: wrap; /* Ensure it wraps on smaller screens */
 }
 
-.newsLetter input {
-  width: 500px;
-  margin-left: 30px;
+.newsLetter input[type="email"] {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px; /* Fixed width */
+  max-width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.newsLetter button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #e74c3c;
   border: none;
-  outline: none;
-  color: #616161;
-  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.newsLetter div button {
-  width: 210px;
-  height: 70px;
-  border-radius: 80px;
-  background: black;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+.newsLetter button:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .newsLetter div {
+    flex-direction: column;
+  }
+
+  .newsLetter input[type="email"] {
+    width: 100%;
+  }
+
+  .newsLetter button {
+    width: 100%;
+  }
 }
