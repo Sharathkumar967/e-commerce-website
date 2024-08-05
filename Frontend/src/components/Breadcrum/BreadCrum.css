@@ -6,6 +6,8 @@
   background-color: #f9f9f9;
   max-width: 1200px;
   margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .breadcrum img {
@@ -17,4 +19,31 @@
 .breadcrum span {
   font-weight: bold;
   color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .breadcrum {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .breadcrum img {
+    width: 9px;
+    height: 9px;
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrum {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .breadcrum img {
+    width: 8px;
+    height: 8px;
+    margin: 0 6px;
+  }
 }

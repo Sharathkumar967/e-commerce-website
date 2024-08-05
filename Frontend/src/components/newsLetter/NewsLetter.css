@@ -1,5 +1,4 @@
 .newsLetter {
-  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
   background: linear-gradient(60deg, #fde1ff 100%, #e1ffea22 60%);
@@ -25,7 +24,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+  flex-wrap: wrap;
 }
 
 .newsLetter input[type="email"] {
@@ -33,9 +32,9 @@
   font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 300px; /* Fixed width */
+  width: 300px;
   max-width: 100%;
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  box-sizing: border-box;
 }
 
 .newsLetter button {
@@ -54,9 +53,28 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .newsLetter h1 {
+    font-size: 1.8em;
+  }
+
+  .newsLetter p {
+    font-size: 1.1em;
+  }
+}
+
 @media (max-width: 768px) {
+  .newsLetter h1 {
+    font-size: 1.6em;
+  }
+
+  .newsLetter p {
+    font-size: 1em;
+  }
+
   .newsLetter div {
     flex-direction: column;
+    gap: 15px;
   }
 
   .newsLetter input[type="email"] {
@@ -65,5 +83,15 @@
 
   .newsLetter button {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsLetter h1 {
+    font-size: 1.4em;
+  }
+
+  .newsLetter p {
+    font-size: 0.9em;
   }
 }

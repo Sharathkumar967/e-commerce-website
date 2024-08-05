@@ -1,6 +1,6 @@
 .new-collections {
   text-align: center;
-  max-width: 1240px;
+  /* max-width: 1240px; */
   margin: 0 auto;
   padding: 20px;
 }
@@ -22,4 +22,35 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .new-collections h1 {
+    font-size: 1.8em;
+  }
+
+  .collections {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .new-collections h1 {
+    font-size: 1.6em;
+  }
+
+  .collections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .new-collections h1 {
+    font-size: 1.4em;
+  }
+
+  .collections {
+    grid-template-columns: 1fr;
+  }
 }
