@@ -1,12 +1,16 @@
 import React from "react";
 import "./Hero.css";
 import hand_icon from "../Assets/hand_icon.png";
-
 import arrow_icon from "../Assets/arrow.png";
-
 import hero_img from "../Assets/hero_image.png";
 
-const Hero = () => {
+const Hero = ({ latestCollectionRef }) => {
+  const scrollToLatestCollection = () => {
+    if (latestCollectionRef.current) {
+      latestCollectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="hero">
       <div className="hero-content">
@@ -20,7 +24,7 @@ const Hero = () => {
             <p>Collection</p>
             <p>for everyone</p>
           </div>
-          <div className="hero-latest-btn">
+          <div className="hero-latest-btn" onClick={scrollToLatestCollection}>
             <div>Latest Collection</div>
             <img src={arrow_icon} alt="" />
           </div>
