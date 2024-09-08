@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Checkout.css"; 
+import "./Checkout.css";
 const Checkout = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,6 +17,14 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData({
+      name: "",
+      email: "",
+      address: "",
+      city: "",
+      postalCode: "",
+      paymentMethod: "creditCard",
+    });
     console.log("Form data submitted:", formData);
   };
 
