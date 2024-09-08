@@ -35,7 +35,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append("product", image);
 
-    await fetch("http://localhost:4000/upload", {
+    await fetch("http://localhost:4000/products/upload", {
       method: "POST",
 
       headers: {
@@ -54,7 +54,7 @@ const AddProduct = () => {
 
       console.log(product);
 
-      await fetch("http://localhost:4000/addproduct", {
+      await fetch("http://localhost:4000/products/addproduct", {
         method: "POST",
         headers: {
           Accept: "application/json",

@@ -1,7 +1,6 @@
-/* Navbar.css */
 .navbar {
   width: 100%;
-  background-color: #fff; /* or any color you prefer */
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0px 30px;
 }
@@ -11,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  cursor: pointer;
 }
 
 .nav-logo {
@@ -29,7 +29,7 @@
 }
 
 .nav-menu-icon {
-  display: none; /* Hidden by default, shown in mobile view */
+  display: none;
   cursor: pointer;
 }
 

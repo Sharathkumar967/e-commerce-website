@@ -15,10 +15,10 @@ const ProductDisplay = (props) => {
     <div className="productDisplay">
       <div className="productdispaly-left">
         <div className="productdisplay-img-list">
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
+          <img src={product?.image} alt="" />
+          <img src={product?.image} alt="" />
+          <img src={product?.image} alt="" />
+          <img src={product?.image} alt="" />
         </div>
 
         <div className="productdisplay-img">
@@ -62,7 +62,7 @@ const ProductDisplay = (props) => {
             <div>XXL</div>
           </div>
 
-          <button onClick={() => addToCart(product.id)}>ADD TO CART</button>
+          <button onClick={() => addToCart(product._id)}>ADD TO CART</button>
 
           <p className="productdisplay-right-category">
             <span>Category : </span>

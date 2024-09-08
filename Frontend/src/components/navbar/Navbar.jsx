@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import logo from "../Assets/logo.png";
 import cart_icon from "../Assets/cart_icon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../../context/ShopContext";
 
 const Navbar = () => {
@@ -10,15 +10,27 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { getTotalCartItems } = useContext(ShopContext);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("auth-token");
+    navigate("/login");
+  };
+
+  const handleHomeScreen = () => {
+    navigate("/");
+  };
+
+  const isLoggedIn = !!localStorage.getItem("auth-token");
+
   return (
     <div className="navbar">
       <div className="navbar-content">
-        <div className="nav-logo">
+        <div className="nav-logo" onClick={handleHomeScreen}>
           <img src={logo} alt="Logo" />
           <p>SHOPPER</p>
         </div>
@@ -103,9 +115,13 @@ const Navbar = () => {
         </ul>
 
         <div className="login-cartTotal">
-          <Link style={{ textDecoration: "none" }} to="/login">
-            <button>Login</button>
-          </Link>
+          {isLoggedIn ? (
+            <button onClick={handleLogout}>Logout</button>
+          ) : (
+            <Link style={{ textDecoration: "none" }} to="/login">
+              <button>Login</button>
+            </Link>
+          )}
 
           <div className="nav-cartTotal">
             <Link style={{ textDecoration: "none" }} to="/cart">

@@ -9,16 +9,20 @@ import RelatedProducts from "../components/relatedProducts/RelatedProducts";
 const Product = () => {
   const { all_product } = useContext(ShopContext);
 
+  console.log("all_product", all_product);
+
   const { productId } = useParams();
 
-  const product = all_product.find((e) => e.id === Number(productId));
+  const product = all_product
+    ? all_product.find((e) => String(e._id) === String(productId))
+    : null;
+
   return (
     <div>
       <BreadCrum product={product} />
       <ProductDisplay product={product} />
-
       <DescriptionBox />
-      <RelatedProducts />
+      <RelatedProducts productId={product?._id} />
     </div>
   );
 };
