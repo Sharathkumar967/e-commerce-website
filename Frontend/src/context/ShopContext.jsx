@@ -5,11 +5,20 @@ export const ShopContext = createContext(null);
 const ShopContextProvider = (props) => {
   const [all_product, setAllProduct] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const getAllProducts = () => {
+    setLoading(true);
     fetch("http://localhost:4000/products/allproducts")
       .then((response) => response.json())
-      .then((data) => setAllProduct(data));
+      .then((data) => {
+        setAllProduct(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching products:", error);
+        setLoading(false);
+      });
   };
 
   const fetchCartData = async () => {
@@ -125,6 +134,7 @@ const ShopContextProvider = (props) => {
     addToCart,
     removeFromCart,
     cartItems,
+    loading,
   };
 
   return (

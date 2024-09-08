@@ -7,15 +7,20 @@ import DescriptionBox from "../components/descriptionBox/DescriptionBox";
 import RelatedProducts from "../components/relatedProducts/RelatedProducts";
 
 const Product = () => {
-  const { all_product } = useContext(ShopContext);
-
-  console.log("all_product", all_product);
-
+  const { all_product, loading } = useContext(ShopContext);
   const { productId } = useParams();
+
+  if (loading) {
+    return <p>Loading product...</p>;
+  }
 
   const product = all_product
     ? all_product.find((e) => String(e._id) === String(productId))
     : null;
+
+  if (!product) {
+    return <p>Product not found.</p>;
+  }
 
   return (
     <div>

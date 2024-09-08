@@ -22,7 +22,7 @@ const ProductDisplay = (props) => {
         </div>
 
         <div className="productdisplay-img">
-          <img className="productdisplay-main-img" src={product.image} alt="" />
+          <img className="productdisplay-main-img" src={product?.image} alt="" />
         </div>
       </div>
       <div className="productdisplay-right">
@@ -37,11 +37,11 @@ const ProductDisplay = (props) => {
 
         <div className="productdisplay-right-prices">
           <div className="productdisplay-right-price-old">
-            ${product.old_price}
+            ${product?.old_price}
           </div>
 
           <div className="productdisplay-right-price-new">
-            ${product.new_price}
+            ${product?.new_price}
           </div>
         </div>
 
