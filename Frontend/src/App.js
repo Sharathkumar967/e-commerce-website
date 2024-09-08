@@ -12,6 +12,7 @@ import men_banner from "./components/Assets/banner_mens.png";
 import women_banner from "./components/Assets/banner_women.png";
 
 import kid_banner from "./components/Assets/banner_kids.png";
+import Checkout from "./pages/checkout/Checkout";
 
 const App = () => {
   return (
@@ -38,6 +39,8 @@ const App = () => {
           </Route>
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<LoginSignup />} />
+
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer />
       </BrowserRouter>
