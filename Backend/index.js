@@ -8,7 +8,13 @@ const port = process.env.PORT || 4000;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+
+const corsOptions = {
+  origin: "https://sharath-ecommerce.netlify.app", 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+};
+
+app.use(cors(corsOptions));
 
 // Connect to MongoDB (ensure you have your MongoDB connection file correctly set up)
 require("./config/db");
