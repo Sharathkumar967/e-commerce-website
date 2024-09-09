@@ -5,7 +5,6 @@ import Item from "../item/Item";
 const RelatedProducts = ({ productId }) => {
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchRelatedProducts = async () => {
@@ -20,7 +19,6 @@ const RelatedProducts = ({ productId }) => {
         setRelatedProducts(data.relatedProducts);
         setLoading(false);
       } catch (err) {
-        setError(err.message);
         setLoading(false);
       }
     };
