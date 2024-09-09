@@ -14,6 +14,7 @@ import women_banner from "./components/Assets/banner_women.png";
 import kid_banner from "./components/Assets/banner_kids.png";
 import Checkout from "./pages/checkout/Checkout";
 
+export const BASE_URL = "https://e-commerce-website-2-aslk.onrender.com";
 const App = () => {
   return (
     <div>

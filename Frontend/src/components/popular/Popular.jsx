@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Popular.css";
 // import data_product from "../Assets/data";
 import Item from "../item/Item";
+import { BASE_URL } from "../../App";
 
 const Popular = () => {
   const [popularProducts, setPopularProducts] = useState([]);
@@ -9,7 +10,7 @@ const Popular = () => {
   console.log("popularProducts", popularProducts);
 
   const getPopularProducts = () => {
-    fetch("http://localhost:4000/products/popularinwomen")
+    fetch(`${BASE_URL}/products/popularinwomen`)
       .then((response) => response.json())
       .then((data) => setPopularProducts(data));
   };

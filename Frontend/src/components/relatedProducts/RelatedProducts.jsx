@@ -10,7 +10,7 @@ const RelatedProducts = ({ productId }) => {
     const fetchRelatedProducts = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4000/products/relatedProducts/${productId}`
+          `${BASE_URL}/products/relatedProducts/${productId}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch related products");

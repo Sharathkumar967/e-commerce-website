@@ -13,7 +13,7 @@ const LoginSignup = () => {
   const login = async () => {
     let responseData;
 
-    await fetch("http://localhost:4000/users/login", {
+    await fetch(`${BASE_URL}/users/login`, {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -36,7 +36,7 @@ const LoginSignup = () => {
   const singUp = async () => {
     let responseData;
 
-    await fetch("http://localhost:4000/users/signup", {
+    await fetch(`${BASE_URL}/users/signup`, {
       method: "POST",
       headers: {
         Accept: "application/form-data",

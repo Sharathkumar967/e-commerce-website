@@ -205,7 +205,7 @@ router.get("/getCart", fetchUser, async (req, res) => {
         .json({ success: false, error: "Cart data not found" });
     }
 
-    console.log("Fetched cart data:", user.cartData); 
+    console.log("Fetched cart data:", user.cartData);
 
     res.json({ success: true, cartData: user.cartData });
   } catch (error) {
@@ -247,7 +247,8 @@ router.post("/upload", upload.single("product"), (req, res) => {
 
   res.json({
     success: 1,
-    image_url: `http://localhost:4000/images/${req.file.filename}`,
+    // image_url: `http://localhost:4000/images/${req.file.filename}`,
+    image_url: `/${req.file.filename}`,
   });
 });
 

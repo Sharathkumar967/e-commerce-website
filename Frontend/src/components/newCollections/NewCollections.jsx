@@ -1,12 +1,13 @@
 import React, { useEffect, useState, forwardRef } from "react";
 import "./NewCollection.css";
 import Item from "../item/Item";
+import { BASE_URL } from "../../App";
 
 const NewCollections = forwardRef((props, ref) => {
   const [new_collection, setNewCollection] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/products/newCollections")
+    fetch(`${BASE_URL}/products/newCollections`)
       .then((response) => response.json())
       .then((data) => setNewCollection(data))
       .catch((error) =>
