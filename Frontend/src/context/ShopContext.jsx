@@ -55,7 +55,7 @@ const ShopContextProvider = (props) => {
 
   const addToCart = async (itemId) => {
     const token = localStorage.getItem("auth-token");
-
+    console.log("token", token);
     if (!token) {
       alert("Please login");
       return;

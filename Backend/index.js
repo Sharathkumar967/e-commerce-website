@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const morgan = require("morgan");
 
 const app = express();
 // const port = 4000;
@@ -9,12 +10,19 @@ const port = process.env.PORT || 4000;
 // Middleware
 app.use(express.json());
 
-const corsOptions = {
-  origin: "https://sharath-ecommerce.netlify.app", 
-  methods: ["GET", "POST", "PUT", "DELETE"],
-};
+app.use(
+  cors({
+    origin: "https://sharath-ecommerce.netlify.app",
+    methods: "GET,POST,PUT,DELETE",
+  })
+);
 
-app.use(cors(corsOptions));
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
+});
+
+app.use(morgan("combined"));
 
 // Connect to MongoDB (ensure you have your MongoDB connection file correctly set up)
 require("./config/db");
