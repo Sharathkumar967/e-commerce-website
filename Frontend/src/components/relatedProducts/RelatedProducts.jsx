@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./RelatedProducts.css";
 import Item from "../item/Item";
+import { BASE_URL } from "../../App";
 
 const RelatedProducts = ({ productId }) => {
   const [relatedProducts, setRelatedProducts] = useState([]);
