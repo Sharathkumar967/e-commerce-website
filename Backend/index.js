@@ -10,12 +10,13 @@ const port = process.env.PORT || 4000;
 // Middleware
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: "https://sharath-ecommerce.netlify.app",
-    methods: "GET,POST,PUT,DELETE",
-  })
-);
+// Allow specific origins
+const corsOptions = {
+  origin: ["http://localhost:3000", "https://sharath-ecommerce.netlify.app"],
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

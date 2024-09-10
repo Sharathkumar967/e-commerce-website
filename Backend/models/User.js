@@ -14,12 +14,16 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  cartData: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Product",
-    },
-  ],
+  // cartData: [
+  //   {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: "Product",
+  //   },
+  // ],
+
+  cartData: {
+    type: [Number],
+  },
   date: {
     type: Date,
     default: Date.now,
