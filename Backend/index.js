@@ -10,6 +10,8 @@ const port = process.env.PORT || 4000;
 const corsOptions = {
   origin: ["http://localhost:3000", "https://sharath-ecommerce.netlify.app"],
   optionsSuccessStatus: 200,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 app.use(cors(corsOptions));
