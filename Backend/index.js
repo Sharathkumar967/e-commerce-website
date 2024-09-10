@@ -22,6 +22,8 @@ app.use(morgan("combined"));
 // Serve static files for uploaded images
 app.use("/images", express.static(path.join(__dirname, "./upload/images")));
 
+
+
 // Routes
 app.use("/products", require("./routes/products"));
 app.use("/users", require("./routes/users"));
