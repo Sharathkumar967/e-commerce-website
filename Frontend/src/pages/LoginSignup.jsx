@@ -17,6 +17,7 @@ const LoginSignup = () => {
     await fetch(`${BASE_URL}/users/login`, {
       method: "POST",
       headers: {
+        mode:'no cors',
         Accept: "application/form-data",
         "Content-Type": "application/json",
       },

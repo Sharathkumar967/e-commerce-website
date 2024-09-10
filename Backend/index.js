@@ -4,29 +4,18 @@ const path = require("path");
 const morgan = require("morgan");
 
 const app = express();
-// const port = 4000;
 const port = process.env.PORT || 4000;
 
 // Middleware
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://sharath-ecommerce.netlify.app"],
+    optionsSuccessStatus: 200,
+  })
+);
+
 app.use(express.json());
-
-// Allow specific origins
-const corsOptions = {
-  origin: ["http://localhost:3000", "https://sharath-ecommerce.netlify.app"],
-  optionsSuccessStatus: 200,
-};
-
-app.use(cors(corsOptions));
-
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something went wrong!");
-});
-
 app.use(morgan("combined"));
-
-// Connect to MongoDB (ensure you have your MongoDB connection file correctly set up)
-require("./config/db");
 
 // Serve static files for uploaded images
 app.use("/images", express.static(path.join(__dirname, "./upload/images")));
@@ -39,6 +28,15 @@ app.use("/users", require("./routes/users"));
 app.get("/", (req, res) => {
   res.send("Express App is Running");
 });
+
+// Error handling middleware (should be last)
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
+});
+
+// Connect to MongoDB (ensure you have your MongoDB connection file correctly set up)
+require("./config/db");
 
 // Start server
 app.listen(port, (error) => {
