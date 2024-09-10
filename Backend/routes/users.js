@@ -38,7 +38,7 @@ router.post("/signup", async (req, res) => {
     },
   };
 
-  const token = jwt.sign(data, "secrete_ecom");
+  const token = jwt.sign(data, process.env.JWT_SECRET || "secrete_ecom");
 
   res.json({ success: true, token });
 });
@@ -57,7 +57,7 @@ router.post("/login", async (req, res) => {
         },
       };
 
-      const token = jwt.sign(data, "secrete_ecom");
+      const token = jwt.sign(data, process.env.JWT_SECRET || "secrete_ecom");
 
       res.json({
         success: true,
