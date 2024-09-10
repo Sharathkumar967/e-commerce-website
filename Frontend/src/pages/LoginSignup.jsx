@@ -17,7 +17,6 @@ const LoginSignup = () => {
     await fetch(`${BASE_URL}/users/login`, {
       method: "POST",
       headers: {
-        mode:'no cors',
         Accept: "application/form-data",
         "Content-Type": "application/json",
       },
@@ -38,7 +37,8 @@ const LoginSignup = () => {
   const singUp = async () => {
     let responseData;
 
-    await fetch(`${BASE_URL}/users/signup`, {
+    // await fetch(`${BASE_URL}/users/signup`, {
+    await fetch("http://localhost:4000/users/signup", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -49,6 +49,8 @@ const LoginSignup = () => {
     })
       .then((response) => response.json())
       .then((data) => (responseData = data));
+
+    console.log("response", responseData);
 
     if (responseData.success) {
       localStorage.setItem("auth-token", responseData.token);
