@@ -7,12 +7,12 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 // Middleware
-app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://sharath-ecommerce.netlify.app"],
-    optionsSuccessStatus: 200,
-  })
-);
+const corsOptions = {
+  origin: ["http://localhost:3000", "https://sharath-ecommerce.netlify.app"],
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(morgan("combined"));
